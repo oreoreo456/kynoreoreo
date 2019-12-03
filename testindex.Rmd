@@ -1,0 +1,73 @@
+---
+title: "kynoreoreo"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# R을 이용한 웹페이지
+
+## 작성자 소개
+
+### 이름
+내 이름은 *김영남* 이다
+### 학과
+전자공학과
+
+### 좋아하는 것들
++ 친구
+  - 신청민
+  - 권준영
++ 애착 물건
+  - 스마트폰
+  - 가방
++ 음식
+  - 자장면
+  - 육개장
+
+#### 이미지
+![한림](img/hallym.jpg)
+
+
+
+
+# 자료분석
+
+필요한 패키지를 불러온다
+
+```{r}
+library(ggplot2)
+
+```
+ 우리는 자동차 경비 데이터 및 mtg데이터를 이용하여 배기량과 도시연비의 관계를 그래프로 살펴보겠습니다.
+```{r}
+head(mpg,10)
+```
+ 산포도를 그려보겠습니다.
+```{r}
+ggplot(mpg, aes(x=displ, y=cty))+ geom_point(aes(color=displ , size=class))
+```
+ 
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
